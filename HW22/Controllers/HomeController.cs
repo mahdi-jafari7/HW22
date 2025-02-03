@@ -7,7 +7,7 @@ namespace HW22.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        //hi
+        //hidfdf
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

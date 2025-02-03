@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>_01_Domain</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="01-Entities\" />
+    <Folder Include="02-Contracts\AppServices\" />
+    <Folder Include="02-Contracts\Services\" />
+    <Folder Include="02-Contracts\Repositories\" />
+  </ItemGroup>
+
+</Project>

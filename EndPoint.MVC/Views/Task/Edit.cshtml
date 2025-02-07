@@ -1,0 +1,28 @@
+﻿@using _01_Domain._01_Entities
+@model MyTask
+
+<div class="container mt-4">
+    <h2 class="mb-3">ویرایش تسک</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label class="form-label">عنوان</label>
+            <input type="text" class="form-control" asp-for="Title" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">توضیحات</label>
+            <textarea class="form-control" asp-for="Description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-check-label">کامل شده؟</label>
+            <input type="checkbox" class="form-check-input" asp-for="IsCompleted" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">ذخیره تغییرات</button>
+        <a href="/Task" class="btn btn-secondary">بازگشت</a>
+    </form>
+</div>

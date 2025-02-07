@@ -1,0 +1,44 @@
+﻿@using _01_Domain._01_Entities
+@model List<MyTask>
+
+<div class="container mt-4">
+
+    <div class="card text-white bg-warning mb-4">
+        <div class="card-body">
+            <h5 class="card-title">تسک‌های ناتمام</h5>
+            <p class="card-text fs-4 fw-bold">@Model.Count(t => !t.IsCompleted) تسک ناتمام</p>
+        </div>
+    </div>
+
+    <h2 class="mb-3">لیست تسک‌ها</h2>
+    <a href="/Task/Create" class="btn btn-success mb-3">+ افزودن تسک جدید</a>
+
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>عنوان</th>
+                <th>توضیحات</th>
+                <th>تاریخ ایجاد</th>
+                <th>کامل شده</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.Title</td>
+                    <td>@task.Description</td>
+                    <td>@task.CreatAt.ToShortDateString()</td>
+                    <td>
+                        <input type="checkbox" disabled @(task.IsCompleted ? "checked" : "") />
+                    </td>
+                    <td>
+                        <a href="/Task/Edit/@task.Id" class="btn btn-primary btn-sm">ویرایش</a>
+                        <a href="/Task/Delete/@task.Id" class="btn btn-danger btn-sm" onclick="return confirm('آیا مطمئن هستید؟')">حذف</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+﻿
+
+@{
+    ViewData["Title"] = "Welcome to Your To-Do List";
+}
+
+<div class="container text-center d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card p-5 shadow-sm rounded">
+        <h1 class="mb-4">Welcome to Your Personal To-Do List</h1>
+        <p class="lead mb-4">A simple and easy way to manage your tasks.</p>
+        <div class="d-flex justify-content-around">
+            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-primary btn-lg w-100 me-2">Register</a>
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-success btn-lg w-100 ms-2">Login</a>
+        </div>
+    </div>
+</div>
+

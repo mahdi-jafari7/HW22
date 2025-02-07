@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="02-Contracts\AppServices\" />
-    <Folder Include="02-Contracts\Services\" />
-    <Folder Include="02-Contracts\Repositories\" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.1" />
   </ItemGroup>
 
 </Project>

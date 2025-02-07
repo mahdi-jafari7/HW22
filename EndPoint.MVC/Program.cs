@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("ToDoListDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ToDoListDbContextConnection' not found.");;
+//var connectionString = builder.Configuration.GetConnectionString("ToDoListDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ToDoListDbContextConnection' not found.");;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -31,6 +31,8 @@ builder.Services.AddScoped<IMyTaskAppService, MyTaskAppService>();
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
 var siteSettings = configuration.GetSection("SiteSetting").Get<SiteSetting>();
 builder.Services.AddSingleton(siteSettings);
+
+
 
 
 

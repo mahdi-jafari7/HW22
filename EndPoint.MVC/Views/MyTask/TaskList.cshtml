@@ -11,7 +11,7 @@
     </div>
 
     <h2 class="mb-3">لیست تسک‌ها</h2>
-    <a href="/Task/Create" class="btn btn-success mb-3">+ افزودن تسک جدید</a>
+    <a asp-controller="MyTask" asp-action="Create" class="btn btn-success mb-3">+ افزودن تسک جدید</a>
 
     <table class="table table-striped">
         <thead class="table-dark">
@@ -31,11 +31,16 @@
                     <td>@task.Description</td>
                     <td>@task.CreatAt.ToShortDateString()</td>
                     <td>
-                        <input type="checkbox" disabled @(task.IsCompleted ? "checked" : "") />
+                        <form method="post" asp-action="CompleteTask" asp-controller="MyTask">
+                            <input type="hidden" name="taskId" value="@task.Id" />
+                            <button type="submit" class="btn btn-sm @(task.IsCompleted ? "btn-success" : "btn-secondary")">
+                                @(task.IsCompleted ? "انجام شده" : "تکمیل کن")
+                            </button>
+                        </form>
                     </td>
                     <td>
-                        <a href="/Task/Edit/@task.Id" class="btn btn-primary btn-sm">ویرایش</a>
-                        <a href="/Task/Delete/@task.Id" class="btn btn-danger btn-sm" onclick="return confirm('آیا مطمئن هستید؟')">حذف</a>
+                        <a asp-controller="MyTask" asp-action="Edit" class="btn btn-primary btn-sm">ویرایش</a>
+                        <a asp-controller="MyTask" asp-action="Delete" class="btn btn-danger btn-sm" onclick="return confirm('آیا مطمئن هستید؟')">حذف</a>
                     </td>
                 </tr>
             }
